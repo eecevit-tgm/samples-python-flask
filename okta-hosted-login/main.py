@@ -15,7 +15,7 @@ oidc = OpenIDConnect(app)
 
 @app.route("/")
 def home():
-    return render_template("home.html", oidc=oidc)
+    return render_template("../home.html", oidc=oidc)
 
 
 @app.route("/login")

@@ -6,7 +6,7 @@ from flask_oidc import OpenIDConnect
 app = Flask(__name__)
 app.config.update({
     'SECRET_KEY': 'SomethingNotEntirelySecret',
-    'OIDC_CLIENT_SECRETS': './client_secrets.json',
+    'OIDC_CLIENT_SECRETS': '../client_secrets.json',
     'OIDC_DEBUG': True,
     'OIDC_ID_TOKEN_COOKIE_SECURE': False,
     'OIDC_SCOPES': ["openid", "profile"],
@@ -19,7 +19,7 @@ oidc = OpenIDConnect(app)
 
 @app.route("/")
 def home():
-    return render_template("home.html", oidc=oidc)
+    return render_template("../home.html", oidc=oidc)
 
 
 @app.route("/login")
